@@ -25,12 +25,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
 	@Autowired
 	private EmployeeRepository employeeRepository;
-
+    /*Codigo para solicitar la consulta completa de todos los datos registrado
+    * /empleados*/
 	@GetMapping("/employees")
-	public List <Employee> getAllEmployees() {
+	public List<Employee> getAllEmployees() {
+		//retorna todo los datos encontrados con el findAll
 		return employeeRepository.findAll();
 	}
-
+    /*Consulta por id utilizando GET y retorna todo el objeto*/
 	@GetMapping("/employees/{id}")
 	public ResponseEntity < Employee > getEmployeeById(@PathVariable(value = "id") Long employeeId)
 			throws ResourceNotFoundException {
@@ -38,12 +40,14 @@ public class EmployeeController {
 				.orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
 		return ResponseEntity.ok().body(employee);
 	}
-
+     //guardar con el metodo POST se guarda agregadno datos al body
 	@PostMapping("/employees")
 	public Employee createEmployee(@Valid @RequestBody Employee employee) {
 		return employeeRepository.save(employee);
 	}
 
+
+	//Se guardan los cambios actualizados buscando por id y cambiando el body para que se vea efectuado la configuracion.
 	@PutMapping("/employees/{id}")
 	public ResponseEntity <Employee> updateEmployee(@PathVariable(value = "id") Long employeeId,
 													  @Valid @RequestBody Employee employeeDetails) throws ResourceNotFoundException {
@@ -57,7 +61,7 @@ public class EmployeeController {
 		return ResponseEntity.ok(updatedEmployee);
 	}
 
-	/*Borrar*/
+	/*Borrar el empleado por id*/
 	@DeleteMapping("/employees/{id}")
 	public Map < String, Boolean > deleteEmployee(@PathVariable(value = "id") Long employeeId)
 			throws ResourceNotFoundException {
