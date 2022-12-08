@@ -42,6 +42,8 @@ public class EmployeeController {
 			throws ResourceNotFoundException {
 		Employee employee = employeeRepository.findById(employeeId)
 				.orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+		System.out.println("DATOS----------> " + employee);
+
 		return ResponseEntity.ok().body(employee);
 	}
      //guardar con el metodo POST se guarda agregadno datos al body
