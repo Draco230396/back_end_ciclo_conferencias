@@ -13,13 +13,17 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>backend-spring-boot</name>
     <description>backend-spring-boot</description>
+    <!--SE crea las propiedades del tipo de codificacion y version de java-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
+    <!--Se agregan las depencias-->
     <dependencies>
         <dependency>
+            <!--Starters donde se descargan varias librerias sin necesidad de invocar a todas solo las que se
+            usaran-->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
@@ -48,10 +52,17 @@
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
         </dependency>
+        <!--Dependencia para realizar los test-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.9.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!--dependencia para soportar los tes-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

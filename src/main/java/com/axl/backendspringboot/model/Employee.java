@@ -6,7 +6,9 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
-
+/**
+ * model: Sera el package donde se almacenarán todos los objetos de la aplicación.
+ * */
 @Getter
 @Setter
 @ToString

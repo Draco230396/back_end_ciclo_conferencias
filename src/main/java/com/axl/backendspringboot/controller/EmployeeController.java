@@ -19,7 +19,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+/**
+ * Tiene clases con el objetivo principal de conectar el backend
+ * con las solicitudes que se hagan desde afuera de la aplicacion
+ * (sistemas web, unirest, api restful, entre otros)
+ * */
 @RestController
 @RequestMapping("/api/v1")
 public class EmployeeController {

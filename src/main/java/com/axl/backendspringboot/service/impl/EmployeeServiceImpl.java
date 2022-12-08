@@ -8,7 +8,11 @@ import com.axl.backendspringboot.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/**Este package tiene las interfaces donde se declaran los métodos que contienen la logica
+de negocio y facilita el uso de secuencia interna siempre y cuando la gestion no se lleve por parte del controller
+o este asu vez sea cargado como referencia del objeto con this.service.metodo();
+al igual que service.impl: Tiene las clases donde se aplica la lógica.*/
+ /*
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
